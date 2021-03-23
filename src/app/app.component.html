@@ -1,0 +1,66 @@
+<ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Construction Calcy</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item>
+        <ion-label>Area</ion-label>
+        <ion-input type="number" slot="end" [(ngModel)]="area" (ionChange)="onAreaChange()"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Civil work of building</ion-label>
+        <ion-select [(ngModel)]="civilWork" value="redClayBrick">
+          <ion-select-option value="redClayBrick">Red Clay Brick</ion-select-option>
+          <ion-select-option value="solidBlock">Solid Block</ion-select-option>
+          <ion-select-option value="aerogon">Aerogon</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Flooring</ion-label>
+        <ion-select [(ngModel)]="flooring">
+          <ion-select-option value="tiles">Tiles</ion-select-option>
+          <ion-select-option value="graniteMarble">Granite/Marble</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Grill work</ion-label>
+        <ion-checkbox slot="end"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Plumbing</ion-label>
+        <ion-checkbox slot="end"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Kitchen Stage & Wall DADO</ion-label>
+        <ion-checkbox slot="end"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Electrical</ion-label>
+        <ion-checkbox slot="end"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Joinery</ion-label>
+        <ion-checkbox slot="end" [(ngModel)]="joinery"></ion-checkbox>
+      </ion-item>
+      <ion-item *ngIf="joinery">
+        <ion-label>UPVC/Alluminium window</ion-label>
+        <ion-checkbox slot="end"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Painting</ion-label>
+        <ion-checkbox slot="end"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  <ion-footer>
+    <ion-toolbar>
+      <ion-item>
+        <ion-label>Total Cost</ion-label>
+        <ion-label>{{total | number: '1.0-0'}}</ion-label>
+      </ion-item>
+    </ion-toolbar>
+  </ion-footer>
+</ion-app>
